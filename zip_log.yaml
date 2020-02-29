@@ -7,6 +7,6 @@
   ignore_errors: false 
   tasks: 
     - name: Perform find command
-      shell: "find /var/log/ -type f -name *.lo -mtime +90 exec gzip -v9 {}\;"
+      shell: "find /var/log/ -type f -name *.lo -mtime +90 exec gzip -v9 {} +;"
     - name: Perform find command on size of a file
-      shell: "find /var/log/ -type f -name *.log -size +1G exec gzip -v9 {}\;"
+      shell: "find /var/log/ -type f -name *.log -size +1G exec gzip -v9 {} +"
