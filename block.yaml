@@ -7,15 +7,16 @@
   ignore_errors: false 
   tasks: 
     - name: Block
-        - block: 
+        block:
           - name: Install Apache
             package: 
               name: httpd
               state: latest
             notify: HTTPD
-        - rescue: 
+        rescue: 
           - name: Install Apache2
-            package: apache2
+            package: 
+              name: apache2
               state: latest 
             notify: HTTPD
 
