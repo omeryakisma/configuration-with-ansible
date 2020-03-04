@@ -22,6 +22,6 @@
 
   handlers:
     - name: HTTPD
-        systemd: httpd
-          state: restarted
+      systemd: httpd
+        state: restarted
       
