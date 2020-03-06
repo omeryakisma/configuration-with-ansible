@@ -1,0 +1,68 @@
+---
+- name: NAME Playbook
+  hosts: all/loc
+  become: true 
+  become_method: sudo 
+  connection: ssh 
+  ignore_errors: false 
+
+  defaults:
+  vars: 
+  roles:
+  playbooks:
+  inventory:
+
+  tasks: 
+    - name: TASK DESCRIPTION
+        when: 
+        COMMAND(package/shell/raw/ping/command/systemd): "{{item/package_name }}"
+          name: WHAT NAME
+          with_items
+            - software1
+            - software2
+            - "software3"  
+          state: latest, present, absent(remove), stopped, started, restarted
+          copy:
+            src:
+            dest:
+          template:
+        notify: HTTPD
+        
+
+    - name: TASK DESCRIPTION
+      block: 
+      - name: TASK NAME
+        COMMAND(package/shell/raw/ping/command/systemd): 
+          name: WHAT NAME
+          state: latest, present, absent(remove), stopped, started, restarted
+        notify: HTTPD
+      rescue: 
+      - name: TASK NAME
+        COMMAND(package/shell/raw/ping/command/systemd): 
+          name: WHAT NAME
+          state: latest, present, absent(remove), stopped, started, restarted
+        notify: HTTPD
+      always: 
+        - name: TASK NAME
+          COMMAND
+
+
+  template:
+    - name: TEMPLATE NAME
+      template:
+        src: 
+        dest:
+        owner:
+        group:
+        setype:
+        mode:
+        validate:
+        newline_sequence: 
+        backup:
+  
+  
+  handlers:
+    - name: HANDLER NAME
+        COMMAND(package/shell/raw/ping/command/systemd): 
+        name: WHAT NAME
+        state: latest, present, absent(remove), stopped, started, restarted
