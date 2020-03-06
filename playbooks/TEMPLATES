@@ -4,7 +4,9 @@
   become: true 
   become_method: sudo 
   connection: ssh 
-  ignore_errors: false 
+  ignore_errors: false
+  roles:
+    - {role: MODULEN}
 
   defaults:
   vars: 
