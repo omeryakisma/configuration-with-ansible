@@ -7,6 +7,8 @@
   ignore_errors: false
   roles:
     - {role: MODULEN}
+    - {role: MODULEN}
+    - {role: MODULEN}
 
   defaults:
   vars: 
